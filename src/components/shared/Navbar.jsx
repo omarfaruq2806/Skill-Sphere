@@ -15,8 +15,7 @@ const Navbar = () => {
         <Navlink href="/courses">Courses</Navlink>
         <Navlink href="/profile">Profile</Navlink>
       </div>
-      {/* <Searchbar></Searchbar> */}
-      <Profile></Profile>
+      <User></User>
     </div>
     </div>
   );
