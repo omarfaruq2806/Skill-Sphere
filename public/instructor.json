@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "John Smith",
+    "title": "Senior Web Developer",
+    "experience": "8+ Years Experience",
+    "students": "12,000+ Students",
+    "rating": 4.9,
+    "image": "/top.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Johnson",
+    "title": "UI/UX Design Expert",
+    "experience": "6+ Years Experience",
+    "students": "9,500+ Students",
+    "rating": 4.8,
+    "image": "/top.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Michael Brown",
+    "title": "Digital Marketing Specialist",
+    "experience": "7+ Years Experience",
+    "students": "11,200+ Students",
+    "rating": 4.7,
+    "image": "/top.jpg"
+  }
+]

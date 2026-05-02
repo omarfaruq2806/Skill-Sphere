@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch using modern tools.",
+    "image": "https://www.magnific.com/free-photo/business-meeting-office_38259416.htm#fromView=keyword&page=1&position=0&uuid=77b4f9aa-868b-4e5a-bfa8-73e07671f67d&query=Business%20Meeting",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "Sarah Smith",
+    "duration": "12 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Master the basics of user interface and user experience design.",
+    "image": "https://i.postimg.cc/3x3QzSGq/uiux.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Mastery",
+    "instructor": "Michael Brown",
+    "duration": "15 hours",
+    "rating": 4.6,
+    "level": "Intermediate",
+    "description": "Learn SEO, social media marketing, and paid advertising strategies.",
+    "image": "https://i.postimg.cc/ht2sF9nH/marketing.jpg",
+    "category": "Marketing"
+  },
+  {
+    "id": 4,
+    "title": "React.js Complete Guide",
+    "instructor": "David Miller",
+    "duration": "18 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Build dynamic web apps using React.js and modern best practices.",
+    "image": "https://i.postimg.cc/VLQ2hJ6T/react.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 5,
+    "title": "Graphic Design Essentials",
+    "instructor": "Emily Johnson",
+    "duration": "10 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Learn Photoshop, Illustrator, and design fundamentals.",
+    "image": "https://i.postimg.cc/yYhJx6Z6/graphic.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 6,
+    "title": "Python for Beginners",
+    "instructor": "Chris Lee",
+    "duration": "14 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Start coding in Python and build real-world projects.",
+    "image": "https://i.postimg.cc/fW0p1YbT/python.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 7,
+    "title": "Advanced JavaScript Concepts",
+    "instructor": "Daniel Wilson",
+    "duration": "16 hours",
+    "rating": 4.8,
+    "level": "Advanced",
+    "description": "Deep dive into closures, async programming, and performance.",
+    "image": "https://i.postimg.cc/q7GQ3Z0n/js.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 8,
+    "title": "Branding & Identity Design",
+    "instructor": "Sophia Davis",
+    "duration": "11 hours",
+    "rating": 4.6,
+    "level": "Intermediate",
+    "description": "Create strong brand identities and visual systems.",
+    "image": "https://i.postimg.cc/CKkG6VbB/branding.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 9,
+    "title": "Content Marketing Strategy",
+    "instructor": "James Anderson",
+    "duration": "13 hours",
+    "rating": 4.5,
+    "level": "Intermediate",
+    "description": "Plan and execute content strategies that drive engagement.",
+    "image": "https://i.postimg.cc/Jz4zY6bB/content.jpg",
+    "category": "Marketing"
+  },
+  {
+    "id": 10,
+    "title": "Next.js Full Course",
+    "instructor": "Alex Turner",
+    "duration": "17 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Build fast and scalable apps using Next.js App Router.",
+    "image": "https://i.postimg.cc/1X2QxZzG/nextjs.jpg",
+    "category": "Development"
+  }
+]
