@@ -17,13 +17,7 @@ const LogIn = () => {
       callbackURL: "/",
     });
 
-    if (error) {
-      alert(error.message);
-    }
-    if (data) {
-      alert("Log In Successfully");
-      console.log(data);
-    }
+    
   };
 
   const socialsignIn = async () => {

@@ -19,13 +19,6 @@ const SignUp = () => {
       image: photo,
       // callbackURL: "https://example.com/callback",
     });
-    if (error) {
-      alert(error.message);
-    }
-    if (data) {
-      alert("Sign Up Successfully");
-      console.log(data);
-    }
   };
   const socialsignIn = async () => {
     await authClient.signIn.social({
@@ -87,19 +80,21 @@ const SignUp = () => {
           >
             Register Now
           </button>
-          
-        <p className="text-center mt-4 flex gap-2 border-b border-gray-200 pb-2">
-          Don't have an account ?
-          <Link href={"/login"}>
-            <span className="text-purple-500">Log In</span>
-          </Link>
-        </p>
-        <button onClick={socialsignIn} className="font-bold mt-4 py-2 px-4 rounded border border-purple-600 text-purple-500 w-full flex justify-center gap-2 items-center">
-          <FaGoogle />
-          Log In With Google
-        </button>
+
+          <p className="text-center mt-4 flex gap-2 border-b border-gray-200 pb-2">
+            Don't have an account ?
+            <Link href={"/login"}>
+              <span className="text-purple-500">Log In</span>
+            </Link>
+          </p>
+          <button
+            onClick={socialsignIn}
+            className="font-bold mt-4 py-2 px-4 rounded border border-purple-600 text-purple-500 w-full flex justify-center gap-2 items-center"
+          >
+            <FaGoogle />
+            Sign Up With Google
+          </button>
         </form>
-        
       </div>
     </div>
   );
