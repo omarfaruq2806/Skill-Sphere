@@ -1,11 +1,43 @@
+"use client";
+import { authClient, useSession } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
 import { FaGoogle } from "react-icons/fa";
 
 const LogIn = () => {
+  const handleLogIn = async (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    const { data, error } = await authClient.signIn.email({
+      email: email,
+      password: password,
+      callbackURL: "/",
+    });
+
+    if (error) {
+      alert(error.message);
+    }
+    if (data) {
+      alert("Log In Successfully");
+      console.log(data);
+    }
+  };
+
+  const socialsignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div className="flex items-center justify-center py-5 md:py-10">
-      <form className="border p-4 rounded-2xl border-gray-200 shadow-md ">
+      <form
+        onSubmit={handleLogIn}
+        className="border p-4 rounded-2xl border-gray-200 shadow-md "
+      >
         <h1 className="text-2xl font-bold mb-4 text-center">Log In</h1>
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2">Email</label>
@@ -31,14 +63,13 @@ const LogIn = () => {
         >
           Log In
         </button>
-        <p className="text-center mt-4">Or</p>
         <p className="text-center mt-4 flex gap-2 border-b border-gray-200 pb-2">
           Don't have an account ?
           <Link href={"/signup"}>
             <span className="text-purple-500">Sign Up</span>
           </Link>
         </p>
-        <button className="font-bold mt-4 py-2 px-4 rounded border border-purple-600 text-purple-500 w-full flex justify-center gap-2 items-center">
+        <button onClick={socialsignIn} className="font-bold mt-4 py-2 px-4 rounded border border-purple-600 text-purple-500 w-full flex justify-center gap-2 items-center">
           <FaGoogle />
           Log In With Google
         </button>

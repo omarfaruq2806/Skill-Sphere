@@ -1,10 +1,22 @@
+// 'use client';
+import { auth } from "@/lib/auth";
+import { useSession } from "@/lib/auth-client";
 import { getCourse } from "@/lib/data";
+import { headers } from "next/headers";
 import Image from "next/image";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { TbSchool } from "react-icons/tb";
 
 const CourseDetailsPage = async ({ params }) => {
+  // const session = await auth.api.getSession({
+  //   headers: await headers(),
+  // });
+
+  // if (!session) {
+  //   redirect("/login");
+  // }
+
   const { id } = await params;
   const allCourses = await getCourse();
   const course = allCourses.find((c) => c.id == id);
