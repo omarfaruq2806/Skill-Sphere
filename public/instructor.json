@@ -6,7 +6,7 @@
     "experience": "8+ Years Experience",
     "students": "12,000+ Students",
     "rating": 4.9,
-    "image": "/top.jpg"
+    "image": "/teacher.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "experience": "6+ Years Experience",
     "students": "9,500+ Students",
     "rating": 4.8,
-    "image": "/top.jpg"
+    "image": "/teacher-2.jpg"
   },
   {
     "id": 3,
@@ -24,6 +24,6 @@
     "experience": "7+ Years Experience",
     "students": "11,200+ Students",
     "rating": 4.7,
-    "image": "/top.jpg"
+    "image": "/teacher_3.jpg"
   }
 ]

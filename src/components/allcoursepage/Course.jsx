@@ -7,17 +7,24 @@ import { TbSchool } from "react-icons/tb";
 const Course = ({ course }) => {
   return (
     <div className="border border-gray-100 p-4 rounded-2xl space-y-1 shadow-md ">
-      <div>
-        {/* <Image src={course.image} width={200} height={200}></Image> */}
-        <span className="bg-purple-400 text-white text-xs px-2 py-1 rounded-2xl">
+      <div className="relative w-full h-[220px] rounded-xl  shadow">
+        <Image
+          src={course.image}
+          alt={course.title}
+          fill
+          className="object-contain rounded-2xl"
+        />
+        <span className="absolute top-2 left-2 bg-purple-500 text-white text-xs px-3 py-1 rounded-full shadow-md">
           {course.category}
         </span>
       </div>
-      <span
+      <div className="mt-2">
+        <span
         className={`px-2 py-1 text-sm text-white rounded-full ${course.level === "Beginner" ? "bg-green-500" : course.level === "Intermediate" ? "bg-yellow-500" : "bg-red-500"}`}
       >
         {course.level}
       </span>
+      </div>
       <h1 className="text-2xl font-bold">{course.title}</h1>
       <p>{course.description}</p>
       <p className="flex items-center gap-2 text-lg font-semibold">
@@ -41,5 +48,3 @@ const Course = ({ course }) => {
 };
 
 export default Course;
-
-

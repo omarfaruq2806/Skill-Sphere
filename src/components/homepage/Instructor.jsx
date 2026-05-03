@@ -5,21 +5,43 @@ const Instructor = async () => {
   const instructors = await getInstructor();
   return (
     <div className="py-10">
-      <h1 className="text-3xl font-bold text-center">Our Top Instructor</h1>
-      <div className=" flex gap-6 flex-col items-center p-4">
+      <h1 className="text-3xl font-bold text-center">Meet Our Top Instructor</h1>
+      <div className=" flex gap-6 flex-col items-center p-4 ">
         {instructors.map((instructor) => (
           <div
             key={instructor.id}
-            className="border grid grid-cols-3 p-4 gap-4 rounded-2xl shadow-md "
+            className=" bg-white border border-purple-100 shadow-md    grid grid-cols-3 gap-5 p-5 rounded-2xl "
           >
-            <div className="col-span-1 ">
-              <Image src={instructor.image} alt={instructor.name} width={300} height={300} className="rounded-2xl"></Image>
+            <div className="col-span-1 flex items-center justify-center">
+              <div className="relative">
+                <Image
+                  src={instructor.image}
+                  alt={instructor.name}
+                  width={200}
+                  height={200}
+                  className="rounded-2xl object-cover border-4 border-purple-200 group-hover:scale-105 transition-transform duration-300"
+                />
+                <span className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs px-3 py-1 rounded-full shadow">
+                  Expert
+                </span>
+              </div>
             </div>
-            <div className="col-span-2 flex flex-col gap-2">
-              <h1 className="text-2xl md:text-3xl font-semibold ">{instructor.name}</h1>
-              <p className="md:text-lg">{instructor.title}</p>
-              <p>{instructor.experience}</p>
-              <p>{instructor.students}</p>
+            <div className="col-span-2 flex flex-col justify-center gap-2">
+              <h1 className="text-2xl md:text-3xl font-bold text-gray-800 group-hover:text-purple-600 transition">
+                {instructor.name}
+              </h1>
+
+              <p className="text-purple-500 font-semibold text-sm md:text-base">
+                {instructor.title}
+              </p>
+
+              <div className="text-gray-600 text-sm space-y-1">
+                <p>🎓 {instructor.experience}</p>
+                <p>👨‍🎓 {instructor.students}</p>
+              </div>
+              <button className="mt-3 w-fit px-4 py-2 bg-purple-600 text-white text-sm rounded-lg hover:bg-purple-700 transition">
+                View Profile
+              </button>
             </div>
           </div>
         ))}

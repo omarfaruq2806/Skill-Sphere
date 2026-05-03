@@ -1,4 +1,5 @@
 import { getCourse } from "@/lib/data";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaStar } from "react-icons/fa";
@@ -7,6 +8,7 @@ import { TbSchool } from "react-icons/tb";
 const PopularCourse = async () => {
   const allCourses = await getCourse();
   const topCourse = allCourses.sort((a, b) => b.rating - a.rating).slice(0, 3);
+  console.log(topCourse);
   return (
     <div className="container mx-auto py-10">
       <h1 className="text-3xl font-bold text-center p-4">Our Popular Course</h1>
@@ -15,15 +17,20 @@ const PopularCourse = async () => {
           return (
             <div key={course.id}>
               <div className="border border-gray-100 p-4 rounded-2xl space-y-1 shadow-md ">
-                <div>
-                  {/* <Image src={course.image} width={200} height={200}></Image> */}
-                  <div className="flex justify-between">
-                    
-                    <p className="flex items-center gap-2 text-yellow-500 "><FaStar /> {course.rating} </p>
-                    <span className="bg-purple-400 text-white text-xs px-2 py-1 rounded-2xl">
+                <div className="relative w-full h-[220px] rounded-xl  shadow">
+                  
+                  <Image
+                    src={course.image}
+                    alt={course.title}
+                    fill
+                    className="object-contain rounded-2xl"
+                  />
+                  <div className="absolute top-2 right-2 bg-white/90 px-2 py-1 rounded-full shadow flex items-center gap-1 text-yellow-500 text-sm">
+                    <FaStar /> {course.rating}
+                  </div>
+                  <span className="absolute top-2 left-2 bg-purple-500 text-white text-xs px-3 py-1 rounded-full shadow">
                     {course.category}
                   </span>
-                  </div>
                 </div>
                 <span
                   className={`px-2 py-1 text-sm text-white rounded-full ${course.level === "Beginner" ? "bg-green-500" : course.level === "Intermediate" ? "bg-yellow-500" : "bg-red-500"}`}

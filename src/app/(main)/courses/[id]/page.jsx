@@ -9,24 +9,24 @@ import { FaStar } from "react-icons/fa";
 import { TbSchool } from "react-icons/tb";
 
 const CourseDetailsPage = async ({ params }) => {
-  // const session = await auth.api.getSession({
-  //   headers: await headers(),
-  // });
-
-  // if (!session) {
-  //   redirect("/login");
-  // }
-
   const { id } = await params;
   const allCourses = await getCourse();
   const course = allCourses.find((c) => c.id == id);
 
   return (
-    <div className="max-w-7xl mx-auto p-4">
-      <div>
-        <h1>there is course image</h1>
-        <span>{course.category}</span>
-        {/* <Image src={course.image} width={200} height={200}></Image> */}
+    <div className="max-w-4xl mx-auto m-5 p-4 border border-gray-100 rounded-2xl shadow">
+      <div className="relative w-full h-[400px] mb-4 rounded-2xl overflow-hidden shadow-lg">
+        <Image
+          src={course.image}
+          alt={course.title}
+          fill
+          className="object-contain"
+        />
+
+        {/* 🏷 Category badge */}
+        <span className="absolute top-3 left-3 bg-purple-600 text-white text-xs md:text-sm px-4 py-1 rounded-full shadow">
+          {course.category}
+        </span>
       </div>
       <span
         className={`px-2 py-1 text-sm text-white rounded-full ${course.level === "Beginner" ? "bg-green-500" : course.level === "Intermediate" ? "bg-yellow-500" : "bg-red-500"}`}
@@ -45,19 +45,12 @@ const CourseDetailsPage = async ({ params }) => {
         <p>{course.rating} </p>
       </div>
       <p className="text-lg font-semibold">{course.duration} of lessons</p>
+      {/* curriculum */}
+      <div>
+
+      </div>
     </div>
   );
 };
 
 export default CourseDetailsPage;
-/*
-"id": 2,
-"title": "UI/UX Design Fundamentals",
-"instructor": "Sarah Smith",
-"duration": "12 hours",
-"rating": 4.7,
-"level": "Beginner",
-"description": "Master the basics of user interface and user experience design.",
-"image": "https://i.postimg.cc/3x3QzSGq/uiux.jpg",
-"category": "Design"
-*/
