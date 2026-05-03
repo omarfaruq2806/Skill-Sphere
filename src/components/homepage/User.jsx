@@ -15,7 +15,7 @@ const User = () => {
     <div>
       {!user && (
         <div>
-          <ul className="flex gap-3">
+          <ul className="flex flex-col items-center md:flex-row gap-3">
             <li>
               <Link href="/login">
                 <button className="flex items-center gap-2 btn text-purple-500 border-purple-500">
@@ -36,7 +36,7 @@ const User = () => {
       )}
 
       {user && (
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col md:flex-row  items-center gap-2">
           <div className="avatar">
             <div className="ring-primary ring-offset-base-100 w-10 h-10 rounded-full ring-2 ring-offset-2">
               <Image
