@@ -8,9 +8,9 @@ import { CiLogin } from "react-icons/ci";
 const User = () => {
   const userdata = authClient.useSession();
   const user = userdata.data?.user;
-  const signout =async ()=>{
-   await authClient.signOut();
-  }
+  const signout = async () => {
+    await authClient.signOut();
+  };
   return (
     <div>
       {!user && (
@@ -39,17 +39,22 @@ const User = () => {
         <div className="flex items-center gap-2">
           <div className="avatar">
             <div className="ring-primary ring-offset-base-100 w-10 h-10 rounded-full ring-2 ring-offset-2">
-              {/* <Image
-                src={user?.image || '/default.jpg'}
+              <Image
+                src={user?.image}
                 width={200}
                 height={200}
-                alt={user?.name || "user"}
+                alt={user?.name}
                 refererPolicy="no-referrer"
-              /> */}
+              />
             </div>
           </div>
           <span>{user?.name}</span>
-          <button onClick={signout} className="btn text-purple-500 border-purple-500">Logout</button>
+          <button
+            onClick={signout}
+            className="btn text-purple-500 border-purple-500"
+          >
+            Logout
+          </button>
         </div>
       )}
     </div>
