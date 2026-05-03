@@ -11,13 +11,13 @@ const page = () => {
       <h1 className="text-3xl font-bold">Profile</h1>
       <div className="flex justify-center items-center gap-4 p-4">
         <div>
-          {/* <Image
+          <Image
             src={user.image}
             alt={user.name}
             width={300}
             height={300}
             className="rounded-2xl"
-          ></Image> */}
+          ></Image>
         </div>
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-bold">{user?.name}</h1>
