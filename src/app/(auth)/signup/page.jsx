@@ -17,7 +17,6 @@ const SignUp = () => {
       email: email, // required
       password: password, // required
       image: photo,
-      // callbackURL: "https://example.com/callback",
     });
   };
   const socialsignIn = async () => {
