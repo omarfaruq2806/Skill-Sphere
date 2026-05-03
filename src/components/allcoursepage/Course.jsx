@@ -3,10 +3,16 @@ import Link from "next/link";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { TbSchool } from "react-icons/tb";
+import * as motion from "motion/react-client";
 
 const Course = ({ course }) => {
   return (
-    <div className="border border-gray-100 p-4 rounded-2xl space-y-1 shadow-md ">
+    <motion.div
+      initial={{ opacity: 0, y: 70 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="border border-gray-100 p-4 rounded-2xl space-y-1 shadow-md "
+    >
       <div className="relative w-full h-[220px] rounded-xl  shadow">
         <Image
           src={course.image}
@@ -20,10 +26,10 @@ const Course = ({ course }) => {
       </div>
       <div className="mt-2">
         <span
-        className={`px-2 py-1 text-sm text-white rounded-full ${course.level === "Beginner" ? "bg-green-500" : course.level === "Intermediate" ? "bg-yellow-500" : "bg-red-500"}`}
-      >
-        {course.level}
-      </span>
+          className={`px-2 py-1 text-sm text-white rounded-full ${course.level === "Beginner" ? "bg-green-500" : course.level === "Intermediate" ? "bg-yellow-500" : "bg-red-500"}`}
+        >
+          {course.level}
+        </span>
       </div>
       <h1 className="text-2xl font-bold">{course.title}</h1>
       <p>{course.description}</p>
@@ -43,7 +49,7 @@ const Course = ({ course }) => {
           </button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

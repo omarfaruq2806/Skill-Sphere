@@ -1,14 +1,23 @@
 import { getInstructor } from "@/lib/data";
 import Image from "next/image";
+import * as motion from "motion/react-client";
 
 const Instructor = async () => {
   const instructors = await getInstructor();
   return (
     <div className="py-10">
-      <h1 className="text-3xl font-bold text-center">Meet Our Top Instructor</h1>
-      <div className=" flex gap-6 flex-col items-center p-4 ">
+      <h1 className="text-3xl font-bold text-center">
+        Meet Our Top Instructor
+      </h1>
+      <div
+        className=" flex gap-6 flex-col items-center p-4 "
+      >
         {instructors.map((instructor) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            whileHover={{ scale: 1.03 }}
             key={instructor.id}
             className=" bg-white border border-purple-100 shadow-md    grid grid-cols-3 gap-5 p-5 rounded-2xl "
           >
@@ -43,7 +52,7 @@ const Instructor = async () => {
                 View Profile
               </button>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

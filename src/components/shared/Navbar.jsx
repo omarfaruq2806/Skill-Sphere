@@ -26,7 +26,7 @@ const Navbar = () => {
             </div>
             <div
               tabIndex="-1"
-              className="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-80  gap-2 p-4 shadow flex flex-col items-center font-medium"
+              className="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 max-w-80  gap-2 p-4 shadow flex flex-col items-center font-medium"
             >
               <Navlink href="/">Home</Navlink>
               <Navlink href="/courses">Courses</Navlink>

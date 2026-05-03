@@ -7,6 +7,9 @@ import Image from "next/image";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { TbSchool } from "react-icons/tb";
+import * as motion from "motion/react-client"
+
+
 
 const CourseDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -14,7 +17,11 @@ const CourseDetailsPage = async ({ params }) => {
   const course = allCourses.find((c) => c.id == id);
 
   return (
-    <div className="max-w-4xl mx-auto m-5 p-4 border border-gray-100 rounded-2xl shadow">
+    <motion.div
+    initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    className="max-w-4xl mx-auto m-5 p-4 border border-gray-100 rounded-2xl shadow">
       <div className="relative w-full h-[400px] mb-4 rounded-2xl overflow-hidden shadow-lg">
         <Image
           src={course.image}
@@ -140,7 +147,7 @@ const CourseDetailsPage = async ({ params }) => {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

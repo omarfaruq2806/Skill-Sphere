@@ -4,6 +4,9 @@ import Link from "next/link";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { TbSchool } from "react-icons/tb";
+import * as motion from "motion/react-client"
+
+
 
 const PopularCourse = async () => {
   const allCourses = await getCourse();
@@ -15,7 +18,12 @@ const PopularCourse = async () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {topCourse.map((course) => {
           return (
-            <div key={course.id}>
+            <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            whileHover={{ scale: 1.03 }}
+            key={course.id}>
               <div className="border border-gray-100 p-4 rounded-2xl space-y-1 shadow-md ">
                 <div className="relative w-full h-[220px] rounded-xl  shadow">
                   
@@ -52,7 +60,7 @@ const PopularCourse = async () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>
