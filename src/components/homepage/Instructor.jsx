@@ -9,9 +9,7 @@ const Instructor = async () => {
       <h1 className="text-3xl font-bold text-center">
         Meet Our Top Instructor
       </h1>
-      <div
-        className=" flex gap-6 flex-col items-center p-4 "
-      >
+      <div className=" flex gap-6 flex-col items-center p-4 ">
         {instructors.map((instructor) => (
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -55,6 +53,7 @@ const Instructor = async () => {
           </motion.div>
         ))}
       </div>
+      
     </div>
   );
 };
