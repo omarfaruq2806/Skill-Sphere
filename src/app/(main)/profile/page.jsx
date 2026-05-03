@@ -12,8 +12,8 @@ const page = () => {
       <div className="flex justify-center items-center gap-4 p-4">
         <div>
           <Image
-            src={user.image}
-            alt={user.name}
+            src={user?.image}
+            alt={user?.name}
             width={300}
             height={300}
             className="rounded-2xl"
