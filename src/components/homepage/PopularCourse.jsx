@@ -11,7 +11,7 @@ import * as motion from "motion/react-client"
 const PopularCourse = async () => {
   const allCourses = await getCourse();
   const topCourse = allCourses.sort((a, b) => b.rating - a.rating).slice(0, 3);
-  console.log(topCourse);
+  
   return (
     <div className="container mx-auto py-10 border-b border-gray-200">
       <h1 className="text-3xl font-bold text-center p-4">Our Popular Course</h1>
@@ -69,14 +69,3 @@ const PopularCourse = async () => {
 };
 
 export default PopularCourse;
-/*
-"id": 2,
-"title": "UI/UX Design Fundamentals",
-"instructor": "Sarah Smith",
-"duration": "12 hours",
-"rating": 4.7,
-"level": "Beginner",
-"description": "Master the basics of user interface and user experience design.",
-"image": "https://i.postimg.cc/3x3QzSGq/uiux.jpg",
-"category": "Design"
-*/

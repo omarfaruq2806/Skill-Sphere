@@ -3,6 +3,7 @@ import { authClient, useSession } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const LogIn = () => {
   const handleLogIn = async (e) => {
@@ -17,12 +18,20 @@ const LogIn = () => {
       callbackURL: "/",
     });
 
+    if(data){
+      toast.success(`Welcome back, ${data.user.name}`);
+      console.log(data)
+    }
+    if(error){
+      toast.error(error.message);
+    }
     
   };
 
   const socialsignIn = async () => {
     await authClient.signIn.social({
       provider: "google",
+      remember: false,
     });
   };
 

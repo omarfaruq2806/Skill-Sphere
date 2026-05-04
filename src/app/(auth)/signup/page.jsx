@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const handleSignUp = async (e) => {
@@ -11,17 +12,24 @@ const SignUp = () => {
     const email = e.target.email.value;
     const photo = e.target.photo.value;
     const password = e.target.password.value;
-    // console.log(name,email, photo);
-    const { data, error } = await authClient.signUp.email({
+    const { data, error, status } = await authClient.signUp.email({
       name: name,
       email: email, // required
       password: password, // required
       image: photo,
     });
+    if (data) {
+      toast.success(`Welcome back, ${data.user.name}`);
+      console.log(data);
+    }
+    if (error) {
+      toast.error(error.message);
+    }
   };
   const socialsignIn = async () => {
     await authClient.signIn.social({
       provider: "google",
+      autoSignIn: false,
     });
   };
 
