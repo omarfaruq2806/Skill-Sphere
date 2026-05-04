@@ -5,11 +5,11 @@ import * as motion from "motion/react-client";
 const Instructor = async () => {
   const instructors = await getInstructor();
   return (
-    <div className="py-10">
+    <div className="container mx-auto py-10  space-y-5 border-b border-gray-200">
       <h1 className="text-3xl font-bold text-center">
         Meet Our Top Instructor
       </h1>
-      <div className=" flex gap-6 flex-col items-center p-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 ">
         {instructors.map((instructor) => (
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -17,9 +17,9 @@ const Instructor = async () => {
             transition={{ duration: 1 }}
             whileHover={{ scale: 1.03 }}
             key={instructor.id}
-            className=" bg-white border border-purple-100 shadow-md    grid grid-cols-3 gap-5 p-5 rounded-2xl "
+            className=" bg-white border border-purple-100 shadow-md grid gap-5 p-5 rounded-2xl "
           >
-            <div className="col-span-1 flex items-center justify-center">
+            <div className=" flex items-center justify-center">
               <div className="relative">
                 <Image
                   src={instructor.image}
@@ -33,7 +33,7 @@ const Instructor = async () => {
                 </span>
               </div>
             </div>
-            <div className="col-span-2 flex flex-col justify-center gap-2">
+            <div className=" flex flex-col justify-center items-center gap-6">
               <h1 className="text-2xl md:text-3xl font-bold text-gray-800 group-hover:text-purple-600 transition">
                 {instructor.name}
               </h1>
@@ -53,7 +53,6 @@ const Instructor = async () => {
           </motion.div>
         ))}
       </div>
-      
     </div>
   );
 };
