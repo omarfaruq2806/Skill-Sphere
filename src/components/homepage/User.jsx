@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { CiLogin } from "react-icons/ci";
-// import avater from "/default.jpg";
 
 const User = () => {
   const { data, isPending } = authClient.useSession();
@@ -15,7 +14,7 @@ const User = () => {
   return (
     <div>
       {isPending ? (
-        <span className="loading loading-spinner loading-xl text-purple-500 flex justify-center"></span>
+        <div className=" flex justify-center items-center"><span className="loading loading-spinner loading-xl text-purple-500 flex justify-center"></span></div>
       ) : user ? (
         <div className="flex flex-col md:flex-row items-center gap-2">
           <div className="w-8 h-8 rounded-full overflow-hidden">
