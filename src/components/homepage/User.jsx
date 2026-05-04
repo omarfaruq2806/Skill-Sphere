@@ -16,7 +16,7 @@ const User = () => {
       {isPending ? (
         <div className=" flex justify-center items-center"><span className="loading loading-spinner loading-xl text-purple-500 flex justify-center"></span></div>
       ) : user ? (
-        <div className="flex flex-col md:flex-row items-center gap-2">
+        <div className="flex flex-col md:flex-row items-center gap-2 ">
           <div className="w-8 h-8 rounded-full overflow-hidden">
             <Image
               src={user?.image || "/default.jpg"}
@@ -30,7 +30,7 @@ const User = () => {
 
           <button
             onClick={signout}
-            className="btn text-purple-500 border-purple-500"
+            className="btn  text-purple-500 border-purple-500"
           >
             Logout
           </button>

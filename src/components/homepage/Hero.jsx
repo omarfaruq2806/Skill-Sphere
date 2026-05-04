@@ -6,7 +6,7 @@ import * as motion from "motion/react-client";
 const Hero = () => {
   return (
     <div className="bg-[url('/top.jpg')] bg-cover bg-center " >
-      <div className="container mx-auto h-screen  flex flex-col items-center justify-center ">
+      <div className="md:container mx-auto h-screen  flex flex-col items-center justify-center ">
         <div className="flex flex-col gap-3 items-center text-white ">
           <motion.h1
             initial={{ opacity: 0, y: 60 }}
