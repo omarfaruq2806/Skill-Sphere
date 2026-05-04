@@ -4,7 +4,7 @@ import React from "react";
 
 const page = async () => {
   const allCourses = await getCourse();
-  // console.log(allCourses)
+  
 
   return (
     <div>

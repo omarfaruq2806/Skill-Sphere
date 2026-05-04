@@ -66,7 +66,3 @@ const LearningTips = () => {
 
 export default LearningTips;
 
-// Time Management
-
-// Manage your time wisely by creating a daily study schedule.
-// Use techniques like Pomodoro (25 minutes focus + 5 minutes break) to stay productive and avoid burnout.
