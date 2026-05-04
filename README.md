@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#  📘 SkillSphere – Online Learning Platform
 
-## Getting Started
+A modern, responsive and feature-rich online learning platform built with Next.js, Tailwind CSS, and BetterAuth.
+Users can explore courses, view details, and enroll in skill-based learning programs like Web Development, Design, and Marketing.
 
-First, run the development server:
+## 🚀 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## [https://skill-sphere-beige.vercel.app/](https://skill-sphere-beige.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📌 Project Purpose
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+ SkillSphere is designed to provide a smooth and interactive learning experience where users can:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Browse different skill-based courses
+View detailed course information
+Register and login securely
+Access protected course details
+Manage their profile
 
-## Learn More
+ ## ⚙️ Tech Stack
+Next.js (App Router) – Frontend Framework 
 
-To learn more about Next.js, take a look at the following resources:
+React – UI Library
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tailwind CSS – Styling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+DaisyUI – UI Components
 
-## Deploy on Vercel
+BetterAuth – Authentication System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+React Toastify – Notifications
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Framer Motion / Motion – Animations
+
+## ✨ Key Features
+🔐 Authentication System ,
+Email & Password Login,
+User Registration System ,
+Google Social Login ,
+Protected Routes (Course Details & Profile) ,
+Auto redirect after logout
+
+## Deployment
+Hosted on Vercel ,
+SPA safe routing ,
+Environment variables secured
