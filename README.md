@@ -1,4 +1,4 @@
-#  📘 SkillSphere – Online Learning Platform
+#  🎓 SkillSphere – Online Learning Platform
 
 A modern, responsive and feature-rich online learning platform built with Next.js, Tailwind CSS, and BetterAuth.
 Users can explore courses, view details, and enroll in skill-based learning programs like Web Development, Design, and Marketing.
