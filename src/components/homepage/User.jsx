@@ -4,51 +4,31 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { CiLogin } from "react-icons/ci";
+// import avater from "/default.jpg";
 
 const User = () => {
-  const userdata = authClient.useSession();
-  const user = userdata.data?.user;
+  const { data, isPending } = authClient.useSession();
+  const user = data?.user;
   const signout = async () => {
     await authClient.signOut();
   };
   return (
     <div>
-      {!user && (
-        <div>
-          <ul className="flex flex-col items-center md:flex-row gap-3">
-            <li>
-              <Link href="/login">
-                <button className="flex items-center gap-2 btn text-purple-500 border-purple-500">
-                  <CiLogin />
-                  Login
-                </button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/signup">
-                <button className="flex items-center gap-2 btn text-purple-500 border-purple-500">
-                  Sign Up
-                </button>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
-
-      {user && (
-        <div className="flex flex-col md:flex-row  items-center gap-2">
-          <div className="avatar">
-            <div className="ring-primary ring-offset-base-100 w-10 h-10 rounded-full ring-2 ring-offset-2">
-              <Image
-                src={user?.image}
-                width={200}
-                height={200}
-                alt={user?.name}
-                refererPolicy="no-referrer"
-              />
-            </div>
+      {isPending ? (
+        <span className="loading loading-spinner loading-xl text-purple-500 flex justify-center"></span>
+      ) : user ? (
+        <div className="flex flex-col md:flex-row items-center gap-2">
+          <div className="w-8 h-8 rounded-full overflow-hidden">
+            <Image
+              src={user?.image || "/default.jpg"}
+              width={32}
+              height={32}
+              alt={user?.name || "user"}
+            />
           </div>
-          <span>{user?.name}</span>
+
+          <span>Welcome, {user?.name}</span>
+
           <button
             onClick={signout}
             className="btn text-purple-500 border-purple-500"
@@ -56,6 +36,24 @@ const User = () => {
             Logout
           </button>
         </div>
+      ) : (
+        <ul className="flex flex-col items-center md:flex-row gap-3">
+          <li>
+            <Link href="/login">
+              <button className="flex items-center gap-2 btn text-purple-500 border-purple-500">
+                <CiLogin />
+                Login
+              </button>
+            </Link>
+          </li>
+          <li>
+            <Link href="/signup">
+              <button className="btn text-purple-500 border-purple-500">
+                Sign Up
+              </button>
+            </Link>
+          </li>
+        </ul>
       )}
     </div>
   );
