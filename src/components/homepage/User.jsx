@@ -1,15 +1,19 @@
 "use client";
-import { authClient, signOut } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { CiLogin } from "react-icons/ci";
 
 const User = () => {
+const router = useRouter();
+
   const { data, isPending } = authClient.useSession();
   const user = data?.user;
   const signout = async () => {
     await authClient.signOut();
+    router.push("/");
   };
   return (
     <div>
@@ -22,7 +26,7 @@ const User = () => {
               src={user?.image || "/default.jpg"}
               width={32}
               height={32}
-              alt={user?.name || "user"}
+              alt={"user"}
             />
           </div>
 

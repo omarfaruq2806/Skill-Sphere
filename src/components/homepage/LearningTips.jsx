@@ -12,8 +12,8 @@ const LearningTips = () => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <motion.div
-          initial={{ opacity: 0, x: 70 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           whileHover={{ scale: 1.03 }}
           className="bg-gray-100 p-6 rounded-2xl flex flex-col items-center gap-4 border-4 border-purple-400"
@@ -29,8 +29,8 @@ const LearningTips = () => {
           </p>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 70 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           whileHover={{ scale: 1.03 }}
           className="bg-gray-100 p-6 rounded-2xl flex flex-col items-center gap-4 border-4 border-purple-400"
@@ -46,8 +46,8 @@ const LearningTips = () => {
           </p>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 70 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           whileHover={{ scale: 1.03 }}
           className="bg-gray-100 p-6 rounded-2xl flex flex-col items-center gap-4 border-4 border-purple-400"

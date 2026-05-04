@@ -1,5 +1,5 @@
 "use client";
-import { authClient, useSession } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import React from "react";
 import { FaGoogle } from "react-icons/fa";
@@ -19,7 +19,7 @@ const LogIn = () => {
     });
 
     if(data){
-      toast.success(`Welcome back, ${data.user.name}`);
+      toast.success(`Welcome back`);
       console.log(data)
     }
     if(error){

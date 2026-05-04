@@ -4,8 +4,11 @@ import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const SignUp = () => {
+  const router = useRouter();
+
   const handleSignUp = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -19,8 +22,8 @@ const SignUp = () => {
       image: photo,
     });
     if (data) {
-      toast.success(`Welcome back, ${data.user.name}`);
-      console.log(data);
+      toast.success("Account created successfully");
+      router.push("/login");
     }
     if (error) {
       toast.error(error.message);
@@ -29,7 +32,6 @@ const SignUp = () => {
   const socialsignIn = async () => {
     await authClient.signIn.social({
       provider: "google",
-      autoSignIn: false,
     });
   };
 
